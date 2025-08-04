@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projets",
+  "info": {
+    "singularName": "projet",
+    "pluralName": "projets",
+    "displayName": "Projet"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titre": {
+      "type": "string",
+      "required": true
+    },
+    "Slug": {
+      "type": "uid",
+      "required": true
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Lien": {
+      "type": "string"
+    },
+    "Annee": {
+      "type": "string",
+      "required": true
+    },
+    "Categorie": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Web",
+      "enum": [
+        "Web",
+        "Graphic Design",
+        "Creative Coding",
+        "Motion Design",
+        "Tangible",
+        "Video Game",
+        "VR Experience"
+      ]
+    }
+  }
+}
