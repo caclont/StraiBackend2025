@@ -43,24 +43,7 @@
       "required": true
     },
     "Categorie": {
-      "type": "enumeration",
-      "required": true,
-      "default": "Web",
-      "enum": [
-        "Web",
-        "Graphic Design",
-        "Creative Coding",
-        "Motion Design",
-        "Tangible",
-        "Video Game",
-        "VR Experience"
-      ]
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::categorie.categorie",
-      "mappedBy": "projets"
+      "type": "string"
     }
   }
 }
