@@ -4,24 +4,24 @@
   "info": {
     "singularName": "mylife",
     "pluralName": "mylifes",
-    "displayName": "Mylife"
+    "displayName": "MyLife"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Annee": {
+    "annee": {
       "type": "string",
       "unique": true
     },
-    "Titre": {
+    "titre": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "text"
     },
-    "Images": {
+    "images": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [
