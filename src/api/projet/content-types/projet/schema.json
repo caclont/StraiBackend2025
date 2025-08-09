@@ -22,6 +22,9 @@
     "Description": {
       "type": "blocks"
     },
+    "Explication": {
+      "type": "text"
+    },
     "Image": {
       "type": "media",
       "multiple": true,
@@ -52,6 +55,12 @@
         "Video Game",
         "VR Experience"
       ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categorie.categorie",
+      "mappedBy": "projets"
     }
   }
 }
