@@ -1,7 +1,3 @@
-/**
- * coucou
- */
+import { factories } from '@strapi/strapi';
 
-import { factories } from '@strapi/strapi'
-
-export default factories.createCoreController('api::categorie.categorie');
+export default factories.createCoreController('api::categorie.categorie' as any);
