@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mylifes",
+  "info": {
+    "singularName": "mylife",
+    "pluralName": "mylifes",
+    "displayName": "Mylife"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "annees": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::annee.annee",
+      "inversedBy": "mylives"
+    },
+    "Titre": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
