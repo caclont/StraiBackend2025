@@ -11,11 +11,9 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "annees": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::annee.annee",
-      "inversedBy": "mylives"
+    "Annee": {
+      "type": "string",
+      "unique": true
     },
     "Titre": {
       "type": "string"
