@@ -19,6 +19,9 @@
       "type": "uid",
       "required": true
     },
+    "Categorie": {
+      "type": "string"
+    },
     "Description": {
       "type": "blocks"
     },
@@ -42,7 +45,7 @@
       "type": "string",
       "required": true
     },
-    "Categorie": {
+    "Collaboration": {
       "type": "string"
     }
   }
