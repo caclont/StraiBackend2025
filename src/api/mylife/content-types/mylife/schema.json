@@ -1,27 +1,26 @@
 {
   "kind": "collectionType",
-  "collectionName": "mylifes",
+  "collectionName": "mylives",
   "info": {
     "singularName": "mylife",
-    "pluralName": "mylifes",
-    "displayName": "MyLife"
+    "pluralName": "mylives",
+    "displayName": "Mylife"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "annee": {
-      "type": "string",
-      "unique": true
-    },
-    "titre": {
+    "Annee": {
       "type": "string"
     },
-    "description": {
+    "Action": {
+      "type": "string"
+    },
+    "Explication": {
       "type": "text"
     },
-    "images": {
+    "ImageMyLife": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [
