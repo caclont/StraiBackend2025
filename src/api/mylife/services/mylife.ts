@@ -1,22 +1,20 @@
-'use strict';
-
-module.exports = {
+export default {
   routes: [
     {
       method: 'GET',
-      path: '/mylifes',
+      path: '/mylives',
       handler: 'mylife.find',
       config: {
-        auth: false
-      }
+        auth: false,
+      },
     },
     {
       method: 'GET',
-      path: '/mylifes/:id',
+      path: '/mylives/:id',
       handler: 'mylife.findOne',
       config: {
-        auth: false
-      }
-    }
-  ]
+        auth: false,
+      },
+    },
+  ],
 };
