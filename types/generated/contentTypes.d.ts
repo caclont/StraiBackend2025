@@ -373,40 +373,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiMylifeMylife extends Struct.CollectionTypeSchema {
-  collectionName: 'mylives';
-  info: {
-    displayName: 'Mylife';
-    pluralName: 'mylives';
-    singularName: 'mylife';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Action: Schema.Attribute.String;
-    Annee: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Explication: Schema.Attribute.Text;
-    ImageMyLife: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::mylife.mylife'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
   collectionName: 'projets';
   info: {
@@ -418,7 +384,7 @@ export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Annee: Schema.Attribute.String & Schema.Attribute.Required;
+    Annee: Schema.Attribute.String;
     Categorie: Schema.Attribute.String;
     Collaboration: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
@@ -437,9 +403,16 @@ export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
       'api::projet.projet'
     > &
       Schema.Attribute.Private;
+    mylifeAction: Schema.Attribute.String;
+    mylifeAnnee: Schema.Attribute.String;
+    mylifeExplication: Schema.Attribute.Text;
+    mylifeImages: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    Slug: Schema.Attribute.UID & Schema.Attribute.Required;
-    Titre: Schema.Attribute.String & Schema.Attribute.Required;
+    Slug: Schema.Attribute.UID;
+    Titre: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -955,7 +928,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::mylife.mylife': ApiMylifeMylife;
       'api::projet.projet': ApiProjetProjet;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

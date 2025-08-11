@@ -13,11 +13,14 @@
   "attributes": {
     "Titre": {
       "type": "string",
-      "required": true
+      "required": false
+    },
+    "mylifeAnnee": {
+      "type": "string"
     },
     "Slug": {
       "type": "uid",
-      "required": true
+      "required": false
     },
     "Categorie": {
       "type": "string"
@@ -43,10 +46,26 @@
     },
     "Annee": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "Collaboration": {
       "type": "string"
+    },
+    "mylifeAction": {
+      "type": "string"
+    },
+    "mylifeExplication": {
+      "type": "text"
+    },
+    "mylifeImages": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
