@@ -31,6 +31,9 @@
       "target": "api::categorie.categorie",
       "mappedBy": "projets"
     },
+    "Explications": {
+      "type": "text"
+    },
     "Description": {
       "type": "blocks"
     },
@@ -49,9 +52,6 @@
       "type": "component",
       "component": "video-externe.video-externe",
       "repeatable": true
-    },
-    "Explications": {
-      "type": "text"
     }
   }
 }
