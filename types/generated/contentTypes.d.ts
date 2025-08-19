@@ -482,6 +482,7 @@ export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.Blocks;
+    Explications: Schema.Attribute.Text;
     Image: Schema.Attribute.Component<'image-externe.image-externe', true>;
     Lien: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
