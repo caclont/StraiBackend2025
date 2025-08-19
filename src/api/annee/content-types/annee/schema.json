@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "annees",
+  "info": {
+    "singularName": "annee",
+    "pluralName": "annees",
+    "displayName": "Annee"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AnneeType": {
+      "type": "string"
+    },
+    "projets": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::projet.projet",
+      "inversedBy": "annees"
+    },
+    "my_lives": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::my-life.my-life",
+      "mappedBy": "annees"
+    }
+  }
+}

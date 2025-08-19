@@ -1,43 +1,26 @@
 {
   "kind": "collectionType",
-  "collectionName": "projets",
+  "collectionName": "my_lives",
   "info": {
-    "singularName": "projet",
-    "pluralName": "projets",
-    "displayName": "Projet"
+    "singularName": "my-life",
+    "pluralName": "my-lives",
+    "displayName": "MyLife"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Titre": {
-      "type": "string",
-      "required": false
-    },
-    "Slug": {
-      "type": "uid",
-      "required": false
-    },
     "annees": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::annee.annee",
-      "mappedBy": "projets"
+      "inversedBy": "my_lives"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::categorie.categorie",
-      "mappedBy": "projets"
-    },
-    "Description": {
-      "type": "blocks"
-    },
-    "Lien": {
+    "Action": {
       "type": "string"
     },
-    "Collaboration": {
+    "Description": {
       "type": "string"
     },
     "Image": {

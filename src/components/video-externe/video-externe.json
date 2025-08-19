@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_video_externe_video_externes",
+  "info": {
+    "displayName": "Video Externe"
+  },
+  "options": {},
+  "attributes": {
+    "provider": {
+      "type": "enumeration",
+      "enum": [
+        "Vimeo",
+        "Youtube",
+        "Cloudinary"
+      ]
+    },
+    "URL": {
+      "type": "string"
+    },
+    "Titre": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

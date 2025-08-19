@@ -373,6 +373,94 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAnneeAnnee extends Struct.CollectionTypeSchema {
+  collectionName: 'annees';
+  info: {
+    displayName: 'Annee';
+    pluralName: 'annees';
+    singularName: 'annee';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AnneeType: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::annee.annee'> &
+      Schema.Attribute.Private;
+    my_lives: Schema.Attribute.Relation<'manyToMany', 'api::my-life.my-life'>;
+    projets: Schema.Attribute.Relation<'manyToMany', 'api::projet.projet'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
+  info: {
+    displayName: 'Categorie';
+    pluralName: 'categories';
+    singularName: 'categorie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CategorieType: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::categorie.categorie'
+    > &
+      Schema.Attribute.Private;
+    projets: Schema.Attribute.Relation<'manyToMany', 'api::projet.projet'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMyLifeMyLife extends Struct.CollectionTypeSchema {
+  collectionName: 'my_lives';
+  info: {
+    displayName: 'MyLife';
+    pluralName: 'my-lives';
+    singularName: 'my-life';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Action: Schema.Attribute.String;
+    annees: Schema.Attribute.Relation<'manyToMany', 'api::annee.annee'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.String;
+    Image: Schema.Attribute.Component<'image-externe.image-externe', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::my-life.my-life'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Video: Schema.Attribute.Component<'video-externe.video-externe', true>;
+  };
+}
+
 export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
   collectionName: 'projets';
   info: {
@@ -384,18 +472,17 @@ export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Annee: Schema.Attribute.String;
-    Categorie: Schema.Attribute.String;
+    annees: Schema.Attribute.Relation<'manyToMany', 'api::annee.annee'>;
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::categorie.categorie'
+    >;
     Collaboration: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.Blocks;
-    Explication: Schema.Attribute.Text;
-    Image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    Image: Schema.Attribute.Component<'image-externe.image-externe', true>;
     Lien: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -403,19 +490,13 @@ export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
       'api::projet.projet'
     > &
       Schema.Attribute.Private;
-    mylifeAction: Schema.Attribute.String;
-    mylifeAnnee: Schema.Attribute.String;
-    mylifeExplication: Schema.Attribute.Text;
-    mylifeImages: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID;
     Titre: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Video: Schema.Attribute.Component<'video-externe.video-externe', true>;
   };
 }
 
@@ -928,6 +1009,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::annee.annee': ApiAnneeAnnee;
+      'api::categorie.categorie': ApiCategorieCategorie;
+      'api::my-life.my-life': ApiMyLifeMyLife;
       'api::projet.projet': ApiProjetProjet;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

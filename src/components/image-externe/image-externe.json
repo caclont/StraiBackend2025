@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_image_externe_image_externes",
+  "info": {
+    "displayName": "Image Externe"
+  },
+  "options": {},
+  "attributes": {
+    "URL": {
+      "type": "string"
+    },
+    "alt": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
