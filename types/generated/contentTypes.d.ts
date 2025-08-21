@@ -445,7 +445,7 @@ export interface ApiMyLifeMyLife extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.Blocks;
+    Description: Schema.Attribute.Text;
     Image: Schema.Attribute.Component<'image-externe.image-externe', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
