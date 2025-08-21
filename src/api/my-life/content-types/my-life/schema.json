@@ -21,8 +21,7 @@
       "type": "string"
     },
     "Description": {
-      "type": "text",
-      "unique": false
+      "type": "blocks"
     },
     "Image": {
       "type": "component",
