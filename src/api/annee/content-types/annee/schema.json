@@ -12,7 +12,8 @@
   "pluginOptions": {},
   "attributes": {
     "AnneeType": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     },
     "projets": {
       "type": "relation",

@@ -21,7 +21,8 @@
       "type": "string"
     },
     "Description": {
-      "type": "text"
+      "type": "text",
+      "unique": false
     },
     "Image": {
       "type": "component",

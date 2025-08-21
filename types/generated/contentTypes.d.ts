@@ -384,7 +384,7 @@ export interface ApiAnneeAnnee extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    AnneeType: Schema.Attribute.String;
+    AnneeType: Schema.Attribute.String & Schema.Attribute.Unique;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -411,7 +411,7 @@ export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    CategorieType: Schema.Attribute.String;
+    CategorieType: Schema.Attribute.String & Schema.Attribute.Unique;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

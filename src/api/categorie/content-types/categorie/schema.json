@@ -12,7 +12,8 @@
   "pluginOptions": {},
   "attributes": {
     "CategorieType": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     },
     "projets": {
       "type": "relation",
